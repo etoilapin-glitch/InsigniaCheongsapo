@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', 'Noto Sans KR', sans-serif;
+  --font-serif: 'Noto Serif KR', Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #f4f0e8;
+    color: #173b37;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  ::selection {
+    background: #173b37;
+    color: #fff;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #a47d45;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 5.3vw, 5.3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+  }
+
+  .body-copy {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 2;
+    color: rgb(23 59 55 / 0.66);
+  }
+
+  .footer-title {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: rgb(255 255 255 / 0.45);
+  }
+}

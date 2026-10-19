@@ -1,0 +1,10 @@
+{
+  "description": "Showcases a luxury hotel with detailed room info, dining options, and an interactive booking calendar for seamless reservation planning.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
