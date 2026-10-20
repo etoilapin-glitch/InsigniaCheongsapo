@@ -383,7 +383,7 @@ export default function App() {
 
       <section
         id="top"
-        className="relative min-h-[760px] bg-[#0b2825] lg:min-h-screen"
+        className="relative min-h-[max(760px,100svh)] bg-[#0b2825]"
       >
         <img
           src={images.hero}
@@ -392,13 +392,13 @@ export default function App() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071c1b]/75 via-[#071c1b]/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071c1b]/70 via-transparent to-[#071c1b]/20" />
-        <div className="relative mx-auto flex min-h-[760px] max-w-[1480px] items-end px-6 pb-32 lg:min-h-screen lg:px-12 lg:pb-28">
+        <div className="relative mx-auto flex min-h-[max(760px,100svh)] max-w-[1480px] items-end px-6 pb-32 lg:px-12 lg:pb-28">
           <div className="max-w-4xl text-white">
-            <p className="mb-7 flex items-center gap-4 text-[10px] font-semibold tracking-[0.34em] text-white/75">
+            <p className="relative top-6 mb-9 flex items-center gap-4 text-[10px] font-semibold tracking-[0.34em] text-white/75">
               <span className="h-px w-12 bg-[#c7a46d]" />
               THE COASTAL SANCTUARY
             </p>
-            <h1 className="font-serif text-[clamp(3.2rem,8vw,7.5rem)] font-light leading-[0.92] tracking-[-0.035em]">
+            <h1 className="font-serif text-[clamp(2.75rem,6vw,6rem)] font-light leading-[0.96] tracking-[-0.035em]">
               Beyond the horizon,
               <span className="mt-3 block italic text-[#e2d2b9]">
                 a place of your own.
