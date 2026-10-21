@@ -398,7 +398,7 @@ export default function App() {
               <span className="h-px w-12 bg-[#c7a46d]" />
               THE COASTAL SANCTUARY
             </p>
-            <h1 className="font-serif text-[clamp(2.75rem,6vw,6rem)] font-light leading-[0.96] tracking-[-0.035em]">
+            <h1 className="whitespace-nowrap font-serif text-[clamp(1.55rem,7vw,6rem)] font-light leading-[0.96] tracking-[-0.035em] sm:text-[clamp(2.75rem,6vw,6rem)]">
               Beyond the horizon,
               <span className="mt-3 block italic text-[#e2d2b9]">
                 a place of your own.
