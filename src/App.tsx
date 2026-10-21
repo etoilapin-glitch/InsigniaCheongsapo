@@ -594,7 +594,7 @@ export default function App() {
                 <em>또 하나의 객실</em>
               </h2>
             </div>
-            <p className="max-w-sm text-[clamp(0.625rem,2.8vw,0.875rem)] leading-6 tracking-[-0.03em] text-white/75 md:pb-2 md:text-sm md:leading-7 md:tracking-normal">
+            <p className="max-w-sm text-[clamp(0.65625rem,2.9vw,0.875rem)] leading-6 tracking-[-0.04em] text-white/75 md:pb-2 md:text-sm md:leading-7 md:tracking-normal">
               호텔 4층 전체에 펼쳐진 대규모 갤러리. 동시대 작가들의 시선과
               청사포의 자연이 교차하는 특별한 큐레이션을 만납니다.
             </p>
