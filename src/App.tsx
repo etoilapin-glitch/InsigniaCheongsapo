@@ -429,9 +429,9 @@ export default function App() {
             </p>
           </div>
           <div>
-            <h2 className="section-title">
+            <h2 className="section-title text-[clamp(1.9rem,8.5vw,5.3rem)] sm:text-[clamp(2.6rem,5.3vw,5.3rem)]">
               머무는 모든 순간이
-              <span className="block whitespace-nowrap text-[clamp(1.9rem,8.5vw,5.3rem)] sm:text-[inherit]">
+              <span className="block whitespace-nowrap">
                 하나의 <em className="not-italic">풍경</em>이 되도록
               </span>
             </h2>
