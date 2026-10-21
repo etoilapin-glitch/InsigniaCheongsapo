@@ -512,7 +512,9 @@ export default function App() {
         <div className="mx-auto max-w-[1320px]">
           <div className="text-center">
             <p className="eyebrow">SIGNATURE EXPERIENCE</p>
-            <h2 className="section-title mt-8">물과 바람이 빚은 완벽한 쉼</h2>
+            <h2 className="section-title mt-8">
+              물과 바람이 빚은 <span className="block sm:inline">완벽한 쉼</span>
+            </h2>
           </div>
           <div className="mt-20 grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
             <article className="group relative min-h-[660px] overflow-hidden">
@@ -561,7 +563,9 @@ export default function App() {
                     Walk with the sea
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-[#173b37]/65">
-                    소나무 향과 파도 소리를 따라 걷는 호텔 전용 해안 산책로.
+                    소나무 향과 파도 소리를 따라 걷는
+                    <br />
+                    호텔 전용 해안 산책로.
                   </p>
                 </div>
                 <Icon name="arrow" className="mt-6 size-6" />
@@ -590,7 +594,7 @@ export default function App() {
                 <em>또 하나의 객실</em>
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-7 text-white/75 md:pb-2">
+            <p className="max-w-sm text-[clamp(0.625rem,2.8vw,0.875rem)] leading-6 tracking-[-0.03em] text-white/75 md:pb-2 md:text-sm md:leading-7 md:tracking-normal">
               호텔 4층 전체에 펼쳐진 대규모 갤러리. 동시대 작가들의 시선과
               청사포의 자연이 교차하는 특별한 큐레이션을 만납니다.
             </p>
@@ -610,8 +614,10 @@ export default function App() {
               </h2>
             </div>
             <p className="body-copy max-w-md md:justify-self-end">
-              한식부터 이탈리안, 일식 그리고 파티세리까지. 서로 다른 네 개의
-              미식 공간이 청사포에서만 가능한 맛의 장면을 완성합니다.
+              한식부터 이탈리안, 일식 그리고 파티세리까지.
+              <br className="md:hidden" />
+              서로 다른 네 개의 미식 공간이 청사포에서만 가능한 맛의 장면을
+              완성합니다.
             </p>
           </div>
 
@@ -664,9 +670,10 @@ export default function App() {
       <section className="bg-[#d9d0c1] px-6 py-24 text-center lg:px-12 lg:py-32">
         <p className="eyebrow">YOUR JOURNEY BEGINS</p>
         <h2 className="mx-auto mt-8 max-w-4xl font-serif text-5xl font-light leading-tight tracking-tight md:text-7xl">
-          가장 온전한 당신의 시간을
-          <br />
-          <em>예약하세요</em>
+          <span className="block md:inline">가장 온전한</span>{" "}
+          <span className="block md:inline">당신의 시간을</span>
+          <br className="hidden md:block" />
+          <em className="block md:inline">예약하세요,</em>
         </h2>
         <button
           onClick={() => setBookingRoom("인시그니아 청사포")}
