@@ -431,8 +431,9 @@ export default function App() {
           <div>
             <h2 className="section-title">
               머무는 모든 순간이
-              <br />
-              하나의 <em>풍경</em>이 되도록
+              <span className="block whitespace-nowrap text-[clamp(1.9rem,8.5vw,5.3rem)] sm:text-[inherit]">
+                하나의 <em className="not-italic">풍경</em>이 되도록
+              </span>
             </h2>
             <div className="mt-10 grid gap-8 border-t border-[#173b37]/20 pt-8 md:grid-cols-2">
               <p className="body-copy">
