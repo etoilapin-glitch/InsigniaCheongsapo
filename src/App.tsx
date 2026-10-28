@@ -86,14 +86,34 @@ const rooms = [
     ko: "오션 시그니처 스위트",
     info: "2인 · 86㎡ · 오션 프런트",
     image: images.suite,
+    description:
+      "청사포의 수평선을 가장 가까이 마주하는 시그니처 스위트입니다. 침실과 거실, 욕실 어디에서든 바다의 빛과 시간의 변화를 온전히 누릴 수 있습니다.",
+    features: ["파노라마 오션 뷰", "킹 베드 1", "프라이빗 리빙룸", "오션 뷰 배스"],
+    gallery: [
+      images.suite,
+      "https://images.unsplash.com/photo-1779942578833-5f00dc79d6d1?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1760204741315-abfc98ce3bf5?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1791671029533-4345d2aa2ed3?auto=format&fit=crop&w=1800&q=85",
+    ],
   },
   {
     name: "Cheongsapo Grand Suite",
     ko: "청사포 그랜드 스위트",
     info: "4인 · 122㎡ · 프라이빗 테라스",
     image: images.suiteTwo,
+    description:
+      "가족과 가까운 이들이 함께 머물 수 있도록 여유롭게 설계한 그랜드 스위트입니다. 독립된 침실과 넓은 테라스가 청사포에서의 하루를 한층 깊게 완성합니다.",
+    features: ["프라이빗 오션 테라스", "독립 침실 2", "다이닝 라운지", "프리미엄 미니바"],
+    gallery: [
+      images.suiteTwo,
+      "https://images.unsplash.com/photo-1776876648949-63ccabf63b10?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1702830499141-a0634d87d6af?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1668277155881-9d3bccb1683a?auto=format&fit=crop&w=1800&q=85",
+    ],
   },
 ]
+
+type Room = (typeof rooms)[number]
 
 const dining = [
   {
@@ -102,6 +122,15 @@ const dining = [
     type: "KOREAN DINING",
     desc: "해운대의 바다와 사계절 식재료를 현대적인 한식으로 풀어낸 깊이 있는 미식 경험.",
     image: images.haewoldang,
+    detailTitle: "계절과 바다를 담은 한식",
+    meta: "LUNCH 12:00–15:00 · DINNER 18:00–22:00",
+    features: ["현대 한식 코스", "프라이빗 다이닝룸", "제철 로컬 식재료", "전통주 페어링"],
+    gallery: [
+      "https://images.unsplash.com/photo-1647168585205-e56ebb24a669?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1583354608715-177553a4035e?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1622140739492-f82f386260b5?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1567745218240-95b39d13de05?auto=format&fit=crop&w=1600&q=85",
+    ],
   },
   {
     name: "테라 에 마레",
@@ -109,6 +138,15 @@ const dining = [
     type: "ITALIAN DINING",
     desc: "최상급 육류와 갓 잡은 해산물, 불과 바다의 풍미가 만나는 이탈리안 파인 다이닝.",
     image: images.terra,
+    detailTitle: "불과 바다가 만나는 식탁",
+    meta: "DINNER 18:00–23:00 · CLOSED MONDAY",
+    features: ["이탈리안 테이스팅 코스", "오픈 파이어 키친", "소믈리에 셀렉션", "오션 뷰 테이블"],
+    gallery: [
+      images.haewoldang,
+      "https://images.unsplash.com/photo-1531973968078-9bb02785f13d?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1560053608-13721e0d69e8?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?auto=format&fit=crop&w=1600&q=85",
+    ],
   },
   {
     name: "미야비 雅",
@@ -116,6 +154,15 @@ const dining = [
     type: "JAPANESE DINING",
     desc: "재료 본연의 결을 섬세하게 살린 정갈한 가이세키와 스시 오마카세.",
     image: images.miyabi,
+    detailTitle: "재료의 결을 살린 미식",
+    meta: "DINNER 17:30–22:00 · RESERVATION ONLY",
+    features: ["가이세키 코스", "스시 오마카세", "셰프 카운터", "사케 페어링"],
+    gallery: [
+      images.miyabi,
+      "https://images.unsplash.com/photo-1557955776-857434f1c951?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1743592889729-d8a92388412e?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1567745218240-95b39d13de05?auto=format&fit=crop&w=1600&q=85",
+    ],
   },
   {
     name: "그랑 아카이브",
@@ -123,8 +170,67 @@ const dining = [
     type: "CAFÉ & PÂTISSERIE",
     desc: "정교한 케이크와 디저트, 향 깊은 커피가 머무는 우아한 살롱.",
     image: images.cafe,
+    detailTitle: "달콤한 기억을 수집하는 살롱",
+    meta: "DAILY 08:00–21:00 · LAST ORDER 20:30",
+    features: ["시그니처 파티세리", "스페셜티 커피", "애프터눈 티", "테이크아웃 서비스"],
+    gallery: [
+      images.cafe,
+      "https://images.unsplash.com/photo-1785642548717-259afa62c791?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1583354608715-177553a4035e?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1622140739492-f82f386260b5?auto=format&fit=crop&w=1600&q=85",
+    ],
   },
 ]
+
+const experiences = [
+  {
+    name: "The Infinite Blue",
+    ko: "인피니티 아웃도어 풀",
+    type: "01 · OUTDOOR POOL",
+    detailTitle: "수평선과 이어지는 가장 푸른 순간",
+    desc: "청사포의 바다와 하나로 이어지는 대규모 야외 수영장입니다. 낮에는 투명한 햇살을, 저녁에는 수면 위로 번지는 노을을 바라보며 온전한 휴식을 경험하세요.",
+    meta: "DAILY 07:00–21:00 · HOTEL GUESTS ONLY",
+    features: ["오션 인피니티 풀", "선베드 라운지", "풀사이드 서비스", "선셋 타임"],
+    gallery: [
+      images.outdoor,
+      "https://images.unsplash.com/photo-1596746698204-d69844da956d?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1557750505-e7b4d1c40410?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1790846069171-2ec595795141?auto=format&fit=crop&w=1600&q=85",
+    ],
+  },
+  {
+    name: "Private Waters",
+    ko: "프라이빗 인도어 풀",
+    type: "02 · INDOOR POOL",
+    detailTitle: "고요하게 머무는 사적인 물",
+    desc: "날씨와 계절에 방해받지 않고 물의 온기와 고요를 누리는 실내 수영장입니다. 절제된 빛과 깊은 색감이 오롯이 자신에게 집중하는 시간을 만듭니다.",
+    meta: "DAILY 08:00–22:00 · ADVANCE BOOKING",
+    features: ["프라이빗 세션", "온수 풀", "릴랙싱 라운지", "웰니스 어메니티"],
+    gallery: [
+      images.indoor,
+      "https://images.unsplash.com/photo-1785097565616-9949a00091de?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1687569407170-06b7898e5fcc?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1764786085560-33ab8a5704a6?auto=format&fit=crop&w=1600&q=85",
+    ],
+  },
+  {
+    name: "Walk with the sea",
+    ko: "호텔 전용 해안 산책로",
+    type: "03 · COASTAL TRAIL",
+    detailTitle: "바다와 나란히 걷는 길",
+    desc: "소나무 향과 파도 소리를 따라 이어지는 호텔 전용 산책로입니다. 청사포의 해안선을 천천히 걸으며 자연의 리듬으로 돌아가는 시간을 만나보세요.",
+    meta: "OPEN 24 HOURS · 1.8 KM COASTAL ROUTE",
+    features: ["호텔 전용 동선", "오션 전망대", "선라이즈 코스", "야간 조명"],
+    gallery: [
+      "https://images.unsplash.com/photo-1772869603278-2e8e01060843?auto=format&fit=crop&w=1800&q=85",
+      "https://images.unsplash.com/photo-1708004579596-35b916e6c97f?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1772451007418-d881fb67ccb1?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1772452142174-cf0a86bf0bfe?auto=format&fit=crop&w=1600&q=85",
+    ],
+  },
+]
+
+type PlaceDetail = (typeof experiences)[number] | (typeof dining)[number]
 
 const weekdays = ["일", "월", "화", "수", "목", "금", "토"]
 
@@ -314,18 +420,304 @@ function BookingModal({ room, onClose }: { room: string onClose: () => void }) {
   )
 }
 
+function RoomDetail({
+  room,
+  onClose,
+  onBook,
+}: {
+  room: Room
+  onClose: () => void
+  onBook: () => void
+}) {
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && onClose()
+    document.addEventListener("keydown", onKey)
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.removeEventListener("keydown", onKey)
+      document.body.style.overflow = ""
+    }
+  }, [onClose])
+
+  return (
+    <div
+      className="fixed inset-0 z-[80] overflow-y-auto bg-[#f4f0e8]"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${room.ko} 상세 보기`}
+    >
+      <div className="sticky top-0 z-20 border-b border-white/10 bg-[#0c2927]/95 text-white backdrop-blur-md">
+        <div className="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-6 lg:px-12">
+          <div>
+            <span className="block text-[9px] tracking-[0.3em] text-[#c7a46d]">
+              INSIGNIA SUITE
+            </span>
+            <span className="mt-1 block font-serif text-sm tracking-[0.06em]">
+              {room.name}
+            </span>
+          </div>
+          <button
+            className="grid size-11 place-items-center border border-white/30 transition hover:border-[#c7a46d] hover:bg-[#c7a46d] hover:text-[#173b37]"
+            onClick={onClose}
+            aria-label="객실 상세 닫기"
+          >
+            <Icon name="close" />
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-[#102f2c] px-6 pb-6 pt-14 text-white lg:px-12 lg:pb-12 lg:pt-20">
+        <div className="mx-auto max-w-[1480px]">
+          <div className="mb-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+            <div>
+              <p className="text-[10px] font-semibold tracking-[0.3em] text-[#c7a46d]">
+                PRIVATE RESIDENCE
+              </p>
+              <h2 className="mt-5 font-serif text-[clamp(2.6rem,6vw,6rem)] font-light leading-[0.98] tracking-[-0.04em]">
+                {room.name}
+              </h2>
+              <p className="mt-4 text-sm text-white/55">{room.ko}</p>
+            </div>
+            <p className="border-l border-white/20 pl-5 text-[10px] tracking-[0.22em] text-white/65">
+              {room.info}
+            </p>
+          </div>
+
+          <div className="grid gap-3">
+            <div className="aspect-[4/3] overflow-hidden bg-[#23413e] md:aspect-[16/7]">
+              <img
+                src={room.gallery[0]}
+                alt={`${room.ko} 메인 객실`}
+                className="size-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {room.gallery.slice(1).map((image, index) => (
+                <div
+                  key={image}
+                  className="aspect-square overflow-hidden bg-[#23413e] md:aspect-[16/9]"
+                >
+                  <img
+                    src={image}
+                    alt={`${room.ko} 상세 이미지 ${index + 2}`}
+                    className="size-full object-cover transition duration-700 hover:scale-[1.025]"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto grid max-w-[1320px] gap-14 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24 lg:px-12 lg:py-28">
+        <div>
+          <p className="eyebrow">THE SUITE</p>
+          <h3 className="mt-7 font-serif text-4xl font-light leading-tight tracking-tight md:text-5xl">
+            바다와 가장 가까운
+            <br />
+            하나의 <em>private retreat</em>
+          </h3>
+          <p className="body-copy mt-8 max-w-xl">{room.description}</p>
+        </div>
+
+        <div className="border-t border-[#173b37]/20 pt-7 lg:mt-1">
+          <p className="text-[10px] font-semibold tracking-[0.25em] text-[#a47d45]">
+            SUITE FEATURES
+          </p>
+          <ul className="mt-6 grid grid-cols-2 border-t border-[#173b37]/15">
+            {room.features.map((feature, index) => (
+              <li
+                key={feature}
+                className="flex min-h-24 items-center gap-3 border-b border-[#173b37]/15 py-5 text-sm font-light"
+              >
+                <span className="font-serif text-xs text-[#a47d45]">
+                  0{index + 1}
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={onBook}
+            className="mt-9 flex w-full items-center justify-between bg-[#173b37] px-7 py-5 text-xs font-semibold tracking-[0.14em] text-white transition hover:bg-[#a47d45]"
+          >
+            이 객실 예약하기
+            <Icon name="arrow" className="size-4" />
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PlaceDetailPage({
+  item,
+  onClose,
+}: {
+  item: PlaceDetail
+  onClose: () => void
+}) {
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && onClose()
+    document.addEventListener("keydown", onKey)
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.removeEventListener("keydown", onKey)
+      document.body.style.overflow = ""
+    }
+  }, [onClose])
+
+  const isDining = "sub" in item
+
+  return (
+    <div
+      className="fixed inset-0 z-[80] overflow-y-auto bg-[#f4f0e8]"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${"ko" in item ? item.ko : item.name} 상세 보기`}
+    >
+      <div className="sticky top-0 z-20 border-b border-white/10 bg-[#0c2927]/95 text-white backdrop-blur-md">
+        <div className="mx-auto flex h-20 max-w-[1480px] items-center justify-between px-6 lg:px-12">
+          <div>
+            <span className="block text-[9px] tracking-[0.3em] text-[#c7a46d]">
+              {isDining ? "CULINARY COLLECTION" : "SIGNATURE EXPERIENCE"}
+            </span>
+            <span className="mt-1 block font-serif text-sm tracking-[0.06em]">
+              {item.name}
+            </span>
+          </div>
+          <button
+            className="grid size-11 place-items-center border border-white/30 transition hover:border-[#c7a46d] hover:bg-[#c7a46d] hover:text-[#173b37]"
+            onClick={onClose}
+            aria-label="상세 페이지 닫기"
+          >
+            <Icon name="close" />
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-[#102f2c] px-6 pb-6 pt-14 text-white lg:px-12 lg:pb-12 lg:pt-20">
+        <div className="mx-auto max-w-[1480px]">
+          <div className="mb-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+            <div>
+              <p className="text-[10px] font-semibold tracking-[0.28em] text-[#c7a46d]">
+                {item.type}
+              </p>
+              <h2 className="mt-5 font-serif text-[clamp(2.7rem,6vw,6rem)] font-light leading-[0.98] tracking-[-0.04em]">
+                {item.name}
+              </h2>
+              <p className="mt-4 text-sm text-white/55">
+                {"sub" in item ? item.sub : item.ko}
+              </p>
+            </div>
+            <p className="max-w-sm border-l border-white/20 pl-5 text-[10px] leading-5 tracking-[0.16em] text-white/65">
+              {item.meta}
+            </p>
+          </div>
+
+          <div className="grid gap-3">
+            <div className="aspect-[4/3] overflow-hidden bg-[#23413e] md:aspect-[16/7]">
+              <img
+                src={item.gallery[0]}
+                alt={`${item.name} 대표 이미지`}
+                className="size-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {item.gallery.slice(1).map((image, index) => (
+                <div
+                  key={image}
+                  className="aspect-square overflow-hidden bg-[#23413e] md:aspect-[16/9]"
+                >
+                  <img
+                    src={image}
+                    alt={`${item.name} 상세 이미지 ${index + 2}`}
+                    className="size-full object-cover transition duration-700 hover:scale-[1.025]"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto grid max-w-[1320px] gap-14 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24 lg:px-12 lg:py-28">
+        <div>
+          <p className="eyebrow">{isDining ? "THE TABLE" : "THE EXPERIENCE"}</p>
+          <h3 className="mt-7 max-w-2xl font-serif text-4xl font-light leading-tight tracking-tight md:text-5xl">
+            {item.detailTitle}
+          </h3>
+          <p className="body-copy mt-8 max-w-xl">{item.desc}</p>
+        </div>
+
+        <div className="border-t border-[#173b37]/20 pt-7 lg:mt-1">
+          <p className="text-[10px] font-semibold tracking-[0.25em] text-[#a47d45]">
+            {isDining ? "DINING HIGHLIGHTS" : "EXPERIENCE HIGHLIGHTS"}
+          </p>
+          <ul className="mt-6 grid grid-cols-2 border-t border-[#173b37]/15">
+            {item.features.map((feature, index) => (
+              <li
+                key={feature}
+                className="flex min-h-24 items-center gap-3 border-b border-[#173b37]/15 py-5 text-sm font-light"
+              >
+                <span className="font-serif text-xs text-[#a47d45]">
+                  0{index + 1}
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-9 flex items-center justify-between border border-[#173b37]/20 px-6 py-5">
+            <span className="text-[10px] tracking-[0.2em] text-[#173b37]/55">
+              FOR RESERVATIONS
+            </span>
+            <span className="font-serif text-sm">+82 51 000 0000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function App() {
   const [bookingRoom, setBookingRoom] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null)
+  const [selectedPlace, setSelectedPlace] = useState<PlaceDetail | null>(null)
+
+  useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 24)
+
+    updateHeader()
+    window.addEventListener("scroll", updateHeader, { passive: true })
+    return () => window.removeEventListener("scroll", updateHeader)
+  }, [])
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
     setMenuOpen(false)
   }
 
+  const openPlaceOnKey = (
+    event: React.KeyboardEvent,
+    item: PlaceDetail,
+  ) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault()
+      setSelectedPlace(item)
+    }
+  }
+
   return (
     <main className="overflow-hidden bg-[#f4f0e8] text-[#173b37]">
-      <header className="absolute inset-x-0 top-0 z-40 border-b border-white/20 text-white">
+      <header
+        className={`fixed inset-x-0 top-0 z-40 border-b text-white transition-[background-color,border-color,box-shadow] duration-300 ${
+          isScrolled
+            ? "border-white/10 bg-[#0c2927]/95 shadow-[0_8px_30px_rgba(7,28,27,0.14)] backdrop-blur-md"
+            : "border-white/20 bg-transparent"
+        }`}
+      >
         <div className="mx-auto flex h-24 max-w-[1480px] items-center justify-between px-6 lg:px-12">
           <button
             className="text-left"
@@ -470,7 +862,19 @@ export default function App() {
             {rooms.map((room, index) => (
               <article
                 key={room.name}
-                className={`group ${index === 1 ? "lg:mt-24" : ""}`}
+                className={`group cursor-pointer focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-8 focus-visible:outline-[#c7a46d] ${
+                  index === 1 ? "lg:mt-24" : ""
+                }`}
+                onClick={() => setSelectedRoom(room)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault()
+                    setSelectedRoom(room)
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`${room.ko} 상세 보기`}
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#23413e]">
                   <img
@@ -480,6 +884,10 @@ export default function App() {
                   />
                   <span className="absolute left-0 top-0 bg-[#f4f0e8] px-5 py-3 font-serif text-xs text-[#173b37]">
                     0{index + 1}
+                  </span>
+                  <span className="absolute bottom-0 right-0 flex items-center gap-3 bg-[#102f2c]/90 px-5 py-4 text-[9px] tracking-[0.22em] text-white backdrop-blur-sm transition group-hover:bg-[#a47d45] group-hover:text-[#173b37]">
+                    VIEW SUITE
+                    <Icon name="arrow" className="size-3.5" />
                   </span>
                 </div>
                 <div className="border-b border-white/20 py-7">
@@ -494,7 +902,11 @@ export default function App() {
                       <p className="mt-2 text-xs text-white/50">{room.ko}</p>
                     </div>
                     <button
-                      onClick={() => setBookingRoom(room.ko)}
+                      onClick={(event) => {
+                        event.stopPropagation()
+                        setBookingRoom(room.ko)
+                      }}
+                      onKeyDown={(event) => event.stopPropagation()}
                       className="group/button flex items-center gap-4 border border-white/40 px-5 py-3 text-xs transition hover:border-[#c7a46d] hover:bg-[#c7a46d] hover:text-[#173b37]"
                     >
                       <Icon name="calendar" className="size-4" />
@@ -517,7 +929,14 @@ export default function App() {
             </h2>
           </div>
           <div className="mt-20 grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
-            <article className="group relative min-h-[660px] overflow-hidden">
+            <article
+              className="group relative min-h-[660px] cursor-pointer overflow-hidden focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#a47d45]"
+              onClick={() => setSelectedPlace(experiences[0])}
+              onKeyDown={(event) => openPlaceOnKey(event, experiences[0])}
+              role="button"
+              tabIndex={0}
+              aria-label={`${experiences[0].ko} 상세 보기`}
+            >
               <img
                 src={images.outdoor}
                 alt="바다 전망의 대규모 야외 수영장"
@@ -535,10 +954,21 @@ export default function App() {
                   수평선과 맞닿은 광활한 수면 위로 청사포의 햇살과 노을이
                   펼쳐집니다.
                 </p>
+                <span className="mt-6 flex items-center gap-3 text-[9px] tracking-[0.22em] text-[#dec59e]">
+                  VIEW DETAIL
+                  <Icon name="arrow" className="size-3.5" />
+                </span>
               </div>
             </article>
             <div className="grid gap-5">
-              <article className="group relative min-h-[380px] overflow-hidden">
+              <article
+                className="group relative min-h-[380px] cursor-pointer overflow-hidden focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#a47d45]"
+                onClick={() => setSelectedPlace(experiences[1])}
+                onKeyDown={(event) => openPlaceOnKey(event, experiences[1])}
+                role="button"
+                tabIndex={0}
+                aria-label={`${experiences[1].ko} 상세 보기`}
+              >
                 <img
                   src={images.indoor}
                   alt="프라이빗 실내 수영장"
@@ -552,9 +982,20 @@ export default function App() {
                   <h3 className="mt-3 font-serif text-3xl font-light">
                     Private Waters
                   </h3>
+                  <span className="mt-5 flex items-center gap-3 text-[9px] tracking-[0.22em] text-[#dec59e]">
+                    VIEW DETAIL
+                    <Icon name="arrow" className="size-3.5" />
+                  </span>
                 </div>
               </article>
-              <article className="flex min-h-[260px] flex-col justify-between bg-[#d9d0c1] p-8">
+              <article
+                className="flex min-h-[260px] cursor-pointer flex-col justify-between bg-[#d9d0c1] p-8 transition hover:bg-[#d1c6b5] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#a47d45]"
+                onClick={() => setSelectedPlace(experiences[2])}
+                onKeyDown={(event) => openPlaceOnKey(event, experiences[2])}
+                role="button"
+                tabIndex={0}
+                aria-label={`${experiences[2].ko} 상세 보기`}
+              >
                 <span className="text-[10px] tracking-[0.24em] text-[#8b6939]">
                   03 · COASTAL TRAIL
                 </span>
@@ -625,9 +1066,16 @@ export default function App() {
             {dining.map((place, index) => (
               <article
                 key={place.name}
-                className={`group ${index % 2 ? "md:mt-20" : ""}`}
+                className={`group cursor-pointer focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-8 focus-visible:outline-[#a47d45] ${
+                  index % 2 ? "md:mt-20" : ""
+                }`}
+                onClick={() => setSelectedPlace(place)}
+                onKeyDown={(event) => openPlaceOnKey(event, place)}
+                role="button"
+                tabIndex={0}
+                aria-label={`${place.name} 상세 보기`}
               >
-                <div className="aspect-[5/4] overflow-hidden bg-[#d5cdbf]">
+                <div className="relative aspect-[5/4] overflow-hidden bg-[#d5cdbf]">
                   <img
                     src={
                       place.name === "해월당"
@@ -639,6 +1087,10 @@ export default function App() {
                     alt={`${place.name} 레스토랑`}
                     className="size-full object-cover transition duration-700 group-hover:scale-[1.035]"
                   />
+                  <span className="absolute bottom-0 right-0 flex items-center gap-3 bg-[#102f2c]/90 px-5 py-4 text-[9px] tracking-[0.22em] text-white backdrop-blur-sm transition group-hover:bg-[#a47d45] group-hover:text-[#173b37]">
+                    VIEW DETAIL
+                    <Icon name="arrow" className="size-3.5" />
+                  </span>
                 </div>
                 <div className="grid grid-cols-[auto_1fr] gap-5 border-b border-[#173b37]/20 py-6">
                   <span className="pt-1 font-serif text-xs text-[#a47d45]">
@@ -670,10 +1122,10 @@ export default function App() {
       <section className="bg-[#d9d0c1] px-6 py-24 text-center lg:px-12 lg:py-32">
         <p className="eyebrow">YOUR JOURNEY BEGINS</p>
         <h2 className="mx-auto mt-8 max-w-4xl font-serif text-5xl font-light leading-tight tracking-tight md:text-7xl">
-          <span className="block md:inline">가장 온전한</span>{" "}
-          <span className="block md:inline">당신의 시간을</span>
+          <span className="block text-4xl md:inline md:text-6xl">가장 온전한</span>{" "}
+          <span className="block text-4xl md:inline md:text-6xl">당신의 시간을</span>
           <br className="hidden md:block" />
-          <em className="block md:inline">예약하세요,</em>
+          <em className="block text-4xl md:inline md:text-6xl">예약하세요.</em>
         </h2>
         <button
           onClick={() => setBookingRoom("인시그니아 청사포")}
@@ -736,6 +1188,24 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {selectedPlace && (
+        <PlaceDetailPage
+          item={selectedPlace}
+          onClose={() => setSelectedPlace(null)}
+        />
+      )}
+
+      {selectedRoom && (
+        <RoomDetail
+          room={selectedRoom}
+          onClose={() => setSelectedRoom(null)}
+          onBook={() => {
+            setSelectedRoom(null)
+            setBookingRoom(selectedRoom.ko)
+          }}
+        />
+      )}
 
       {bookingRoom && (
         <BookingModal room={bookingRoom} onClose={() => setBookingRoom(null)} />
