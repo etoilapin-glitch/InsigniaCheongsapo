@@ -241,7 +241,7 @@ function formatDate(date: Date | null) {
   ).padStart(2, "0")}`
 }
 
-function BookingModal({ room, onClose }: { room: string onClose: () => void }) {
+function BookingModal({ room, onClose }: { room: string; onClose: () => void }) {
   const [month, setMonth] = useState(
     () => new Date(new Date().getFullYear(), new Date().getMonth(), 1),
   )
